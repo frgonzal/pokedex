@@ -33,20 +33,26 @@
     },
 
     methods: {
+      /**
+       * Show the Pokémon details.
+       * @param pokemon The Pokémon to show the details.
+       */
       showPokemon(pokemon: Pokemon) {
         this.activePokemon = pokemon;
       },
 
+      /**
+       * Show the Pokémon list.
+       */
       showList() {
         this.activePokemon = null;
       },
 
       /**
-       * Fetch the Pokémon image from the API.
-       * @param name The Pokémon name.
-       * @returns The Pokémon image URL.
+       * Fetch the Pokémon data from the API.
+       * @param name The Pokémon name to fetch the data.
        */
-      async GetPokemonImg(name: string) {
+      async GetPokemonData(name: string) {
         try {
           const response = await fetch(`${POKEMON_API_URL}/${name}`);
           const data = await response.json() as PokemonData;
@@ -66,7 +72,7 @@
           const data = await response.json() as APIResponse;
           this.results = data.results;
           this.results.forEach(async (pokemon) => {
-            const data = await this.GetPokemonImg(pokemon.name);
+            const data = await this.GetPokemonData(pokemon.name);
             pokemon.data = data;
           });
         } catch (error) {
