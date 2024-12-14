@@ -5,14 +5,18 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'PokemonList',
     component: () => import('../views/PokemonList/index.vue'),
-    meta: { layout: 'DefaultLayout' },
+    meta: {
+      title: 'Pokédex',
+    }
   },
   {
     path: '/pokemon/:name',
     name: 'PokemonDetail',
     component: () => import('../views/PokemonDetail/index.vue'),
     props: true,
-    meta: { layout: 'DefaultLayout' },
+    meta: {
+      title: 'Detalles Pokémon',
+    }
   },
   { 
     path: '/:pathMatch(.*)*', 
