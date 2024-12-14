@@ -9,7 +9,7 @@
   import { Pokemon, PokemonData, APIResponse } from './types/pokemon.ts';
   import PokemonList from './components/PokemonList.vue';
   import PokemonDetails from './components/PokemonDetails.vue';
-  import { TOTAL_POKEMONS } from './config.ts';
+  import { TOTAL_POKEMONS, POKEMON_API_URL } from './config.ts';
 
   export default {
     name: 'Pokedex',
@@ -48,7 +48,7 @@
        */
       async GetPokemonImg(name: string) {
         try {
-          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+          const response = await fetch(`${POKEMON_API_URL}/${name}`);
           const data = await response.json() as PokemonData;
           return data;
         } catch (error) {
@@ -62,7 +62,7 @@
        */
       async fetchPokemonData() {
         try {
-          const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${TOTAL_POKEMONS}&offset=0`);
+          const response = await fetch(`${POKEMON_API_URL}?limit=${TOTAL_POKEMONS}&offset=0`);
           const data = await response.json() as APIResponse;
           this.results = data.results;
           this.results.forEach(async (pokemon) => {
