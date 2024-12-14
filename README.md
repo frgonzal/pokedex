@@ -23,8 +23,6 @@ Instalar las dependencias:
 
 ## Desafíos encontrados y cómo se resolvieron.
 
-El primer desafío fue modelar la solución mientras aprendía Vue, ya que no lo había utilizado antes. Tuve que buscar información sobre cómo funciona y cómo crear un proyecto con esta herramienta. Esto no fue tan complicado, ya que había trabajado anteriormente con herramientas como TypeScript y React. Para buscar información, me apoyé en material visual de YouTube y en herramientas de IA como ChatGPT. 
+El primer desafío fue modelar la solución mientras aprendía Vue, ya que no lo había utilizado antes. Tuve que buscar información sobre cómo funciona y cómo crear un proyecto con esta herramienta. Esto no fue tan complicado, ya que había trabajado anteriormente con herramientas como TypeScript y React. Para buscar información, me apoyé en material visual de YouTube, en herramientas de IA como ChatGPT, entre otras. Al inicio, fue un poco complicado entender los componentes de Vue, pero una vez que comprendí las distintas partes y métodos de un componente, el desarrollo se volvió mucho más sencillo.
 
-Otro desafío fue implementar la funcionalidad para ver los detalles de un Pokémon. Para ello, pensé en crear un endpoint que recibiera el nombre del Pokémon. Utilicé un router que permitiera trabajar con una vista para la página principal y otra para los detalles de un Pokémon. Luego, al cargar los detalles de un Pokémon, el nombre se obtiene del parámetro en la URL. El proyecto está estructurado teniendo en cuenta las diferentes vistas disponibles.
-
-El resto de las funcionalidades fueron bastante directas, por lo que no hubo mayores complicaciones al implementarlas.
+Otro desafío fue implementar la funcionalidad para ver los detalles de un Pokémon. Inicialmente pensé en crear un endpoint que recibiera el nombre del Pokémon, pero luego me di cuenta de que esto separaría la lógica de la aplicación y requeriría múltiples llamadas a la PokeAPI. Finalmente, decidí guardar la información obtenida de la API en una `ref` de la aplicación principal y luego alternar entre renderizar la lista o los detalles de un Pokémon según si se seleccionó alguno. 
