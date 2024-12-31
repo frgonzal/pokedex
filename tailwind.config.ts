@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: "var(--font-sans)",
+        mono: "var(--font-mono)",
+        ps2p: ["var(--font-press-start-2p)", "sans-serif"],
+      },
     },
   },
   plugins: [],
