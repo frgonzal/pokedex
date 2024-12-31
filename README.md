@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokedex App
+
+This is a Pokedex web application built with modern web technologies. The app fetches data from the [PokeAPI](https://pokeapi.co/) to display a list of Pokémon, allowing users to view detailed information about each Pokémon. The application is containerized with Docker for easy deployment.
+
+## Features
+
+- Fetch and display a list of Pokémon.
+- View detailed information about selected Pokémon.
+- Responsive and stylish UI built with TailwindCSS.
+- Type-safe codebase using TypeScript.
+- Server-side rendering and optimized performance with Next.js.
+- Modular and reusable components for better maintainability.
+
+## Built With
+
+- **Next.js** - React framework for server-side rendering and static site generation.
+- **React** - Frontend library for building user interfaces.
+- **TypeScript** - Superset of JavaScript providing type safety.
+- **TailwindCSS** - Utility-first CSS framework for styling.
+- **Docker** - Containerization for consistent and portable deployments.
+- **PokeAPI** - Free and open API for Pokémon data.
+
+## Requirements
+
+- [Docker](https://www.docker.com/) installed on your machine.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the application:
+
+### Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd <repository-name>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build the Docker Images
+```bash
+docker-compose build
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+docker-compose up
+```
 
-## Learn More
+### Access the Application
 
-To learn more about Next.js, take a look at the following resources:
+Once the container is running, you can access the app in your browser at:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+http://localhost:3000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To stop the application, press `Ctrl+C` in the terminal and run:
+```bash
+docker-compose down
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+.
+├── app
+│   ├── (root)/               # Main entry page
+│   ├── components/           # Reusable React components
+│   ├── favicon.ico           # Favicon for the app
+│   ├── globals.css           # Global CSS styles
+│   └── types.ts              # Type definitions
+├── docker-compose.yml        # Docker Compose configuration
+├── Dockerfile                # Dockerfile for containerization
+├── eslint.config.mjs         # ESLint configuration
+├── lst.txt                   # Sample list or utility file
+├── next-env.d.ts             # Next.js TypeScript environment
+├── next.config.ts            # Next.js configuration
+└── node_modules/             # Node.js dependencies
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development Setup
+
+To run the app locally during development:
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser at:
+
+   ```
+   http://localhost:3000
+   ```
+
+## Acknowledgements
+
+- [PokeAPI](https://pokeapi.co/) for providing the Pokémon data.
