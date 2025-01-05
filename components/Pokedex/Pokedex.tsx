@@ -32,7 +32,7 @@ function Pokedex({ reload }: PokedexProps) {
   if (error) {
     return (
       <div className="flex items-center justify-center py-10 font-bold text-2xl font-ps2p">
-        Error: {error.message}
+        An error occurred. Please try again later.
       </div>
     );
   };

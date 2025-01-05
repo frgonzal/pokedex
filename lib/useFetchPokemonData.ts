@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const useFetchPokemonData = () => {
   const [pokemons, setPokemons] = useState([] as Pokemon[]);
-  const [error, setError] = useState(null as Error | any | null);
+  const [error, setError] = useState(null as unknown);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const useFetchPokemonData = () => {
         setPokemons(pokemons);
         setLoading(false);
 
-      } catch (error: Error | any) {
+      } catch (error: unknown) {
         setError(error);
         setLoading(false);
       }
