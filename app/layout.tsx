@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Press_Start_2P } from "next/font/google";
 import "@/app/globals.css";
 import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
 
 const pressStart2P = Press_Start_2P({
   subsets: ["latin"],

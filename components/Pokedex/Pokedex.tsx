@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PokemonList from './List/PokemonList';
 import PokemonDetails from './Detail/PokemonDetails';
 import Pagination from '@/components/Navigation/Pagination';
