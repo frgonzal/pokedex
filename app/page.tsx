@@ -1,18 +1,9 @@
-'use client';
-import Header from "@/components/Layout/Header";
 import Pokedex from "@/components/Pokedex/Pokedex";
-import { useState } from "react";
 
 function Home() {
-  const [reload, setReload] = useState(0);
-  const handleLogoClick = () => {
-    setReload(reload => reload + 1);
-  }
-
   return (
-    <div>
-      <Header onLogoClick={handleLogoClick}/>
-      <Pokedex reload={reload}/>
+    <div className="p-10 flex flex-col min-h-[calc(100vh-6rem)]">
+      <Pokedex/>
     </div>
   );
 }

@@ -17,8 +17,9 @@ function PokemonRow({ pokemon, onClick }: PokemonRowProps) {
         alt={pokemon.name}
         size={55}
       />
-
-      {pokemon.id} {pokemon.name}
+      <div className="flex items-center max-w-[calc(100%-100px)]">
+        {pokemon.id} {pokemon.name}
+      </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
-import { Pixelify_Sans } from "next/font/google";
+import { Press_Start_2P } from "next/font/google";
 import "@/app/globals.css";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
 
 const pressStart2P = Press_Start_2P({
   subsets: ["latin"],
@@ -9,37 +10,24 @@ const pressStart2P = Press_Start_2P({
   variable: "--font-press-start-2p",
 });
 
-const pixelifySans = Pixelify_Sans({
-  subsets: ["latin"],
-  variable: "--font-pixelify-sans",
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "Pokedex",
   description: "A simple pokedex",
 };
 
-function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+};
+
+function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable} ${pixelifySans.variable} antialiased`}
+        className={`${pressStart2P.variable} antialiased`}
       >
+        <Header/>
         {children}
+        {/* <Footer/> */}
       </body>
     </html>
   );

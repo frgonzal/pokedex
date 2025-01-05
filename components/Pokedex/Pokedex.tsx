@@ -9,11 +9,7 @@ import { Pokemon } from '@/types/pokemons';
 import { POKEMONS_PER_PAGE } from '@/constants';
 import useFetchPokemonData from '@/lib/useFetchPokemonData';
 
-interface PokedexProps {
-  reload: number;
-}
-
-function Pokedex({ reload }: PokedexProps) {
+function Pokedex() {
   const { pokemons: pokemonData, error, loading } = useFetchPokemonData();
   const [activePokemon, setActivePokemon] = useState(null as Pokemon | null);
   const [page, setPage] = useState(1);
@@ -22,12 +18,6 @@ function Pokedex({ reload }: PokedexProps) {
   const filteredPokemonData = pokemonData.filter((pokemon) => pokemon.name.includes(search));
   const maxPage = Math.ceil(filteredPokemonData.length / POKEMONS_PER_PAGE);
   const pokemons = filteredPokemonData.slice((page - 1) * POKEMONS_PER_PAGE, page * POKEMONS_PER_PAGE);
-
-  useEffect(() => {
-    setActivePokemon(null);
-    setSearch("");
-    setPage(1);
-  }, [reload]);
 
   if (error) {
     return (
@@ -67,7 +57,7 @@ function Pokedex({ reload }: PokedexProps) {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center h-full gap-1 p-6">
+    <div className="flex flex-row items-center justify-center h-full gap-1">
       <div className="">
       {
         activePokemon ? (
