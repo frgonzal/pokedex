@@ -8,17 +8,16 @@ interface ImageDecoratorProps {
   backgroundSize?: number;
 }
 
-
 function ImageDecorator({ src, alt, size, backgroundImg, backgroundSize}: ImageDecoratorProps) {
   return (
     <div
-      className={`relative flex justify-center items-center bg-[var(--background)] rounded-full ${backgroundImg ? 'w-full' : ''}`}
-      >
+      className={`relative flex justify-center items-center bg-background rounded-full ${backgroundImg ? 'w-full' : ''}`}
+    >
 
       {backgroundImg &&
         <Image
           src={backgroundImg} 
-          className={`absolute z-0 rounded-full opacity-30`}
+          className={`absolute z-0 rounded-full opacity-10`}
           width={backgroundSize || size}
           height={backgroundSize || size}
           alt={alt}
@@ -27,7 +26,7 @@ function ImageDecorator({ src, alt, size, backgroundImg, backgroundSize}: ImageD
 
       <Image
         src={src} 
-        className={"relative z-10"}
+        className={"relative z-10 rounded-full"}
         width={size}
         height={size}
         alt={alt}

@@ -1,4 +1,4 @@
-import BorderDecorator from "./BorderDecorator";
+import BorderDecorator from "../Decorators/BorderDecorator";
 
 interface SearchInputProps {
   value: string;

@@ -12,7 +12,7 @@ function Pagination({ actualPage, maxPage, onPrevious, onNext }: PaginationProps
   return (
     <div className="flex flex-row items-center justify-between w-full px-10 mt-5">
       {
-        actualPage > 1 && (
+        (actualPage > 1) && (
           <button 
             onClick={onPrevious}
             className="mr-right"
@@ -28,7 +28,7 @@ function Pagination({ actualPage, maxPage, onPrevious, onNext }: PaginationProps
         )
       }
       {
-        actualPage < maxPage && (
+        (actualPage < maxPage) && (
           <button 
             onClick={onNext}
             className="ml-auto"

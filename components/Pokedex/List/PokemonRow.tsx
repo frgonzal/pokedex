@@ -1,5 +1,5 @@
-import ImageDecorator from "./ImageDecorator";
-import { Pokemon } from "../types";
+import ImageDecorator from "@/components/Decorators/ImageDecorator";
+import { Pokemon } from "@/types/pokemons";
 
 interface PokemonRowProps {
   pokemon: Pokemon;
@@ -9,7 +9,7 @@ interface PokemonRowProps {
 function PokemonRow({ pokemon, onClick }: PokemonRowProps) {
   return (
     <div 
-      className="flex items-center gap-16 w-full justify-start px-2 font-ps2p text-gray-800 text-sm border-4 border-transparent rounded-lg hover:border-red-500 hover:shadow-[inset_0_0_0_2px_#ffffff,0_0_0_2px_#ffffff] transition-all duration-300 cursor-pointer"
+      className="flex items-center gap-16 w-full justify-start px-2 font-ps2p text-sm border-4 border-transparent rounded-lg hover:border-secondary hover:shadow-[inset_0_0_0_2px_#ffffff,0_0_0_2px_#ffffff] transition-all duration-300 cursor-pointer"
       onClick={() => onClick(pokemon)}
     >
       <ImageDecorator

@@ -1,6 +1,6 @@
-import ListDecorator from "./ListDecorator"
+import ListDecorator from "@/components/Decorators/ListDecorator"
+import { Pokemon } from "@/types/pokemons";
 import PokemonRow from "./PokemonRow";
-import { Pokemon } from "../types";
 
 interface ListProps {
   pokemons: Pokemon[];

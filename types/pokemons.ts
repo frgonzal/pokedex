@@ -23,8 +23,8 @@ interface PokemonData {
 interface Pokemon {
   name: string;
   url: string;
-  id?: string;
-  data?: PokemonData;
+  id: string;
+  data: PokemonData;
 }
 
 export type { Pokemon, PokemonData, PokemonType, PokemonAbility };

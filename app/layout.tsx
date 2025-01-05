@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Press_Start_2P } from 'next/font/google';
+import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 import "@/app/globals.css";
 
 const pressStart2P = Press_Start_2P({
-  subsets: ['latin'],
+  subsets: ["latin"],
   weight: "400",
-  // display: 'swap',
-  variable: '--font-press-start-2p',
+  variable: "--font-press-start-2p",
+});
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: "--font-pixelify-sans",
 });
 
 const geistSans = Geist({
@@ -33,7 +37,7 @@ function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable} ${pixelifySans.variable} antialiased`}
       >
         {children}
       </body>
